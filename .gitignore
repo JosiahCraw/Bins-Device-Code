@@ -6,4 +6,5 @@ dist/
 __pycache__/
 Python-3.6.5/
 *.jpg
+!wiki/main.jpg
 *.json
