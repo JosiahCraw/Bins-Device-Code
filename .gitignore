@@ -1,0 +1,9 @@
+Adafruit_Python_SSD1306/
+Adafruit_SSD1306.egg-info/
+build/
+dist/
+.idea/
+__pycache__/
+Python-3.6.5/
+*.jpg
+*.json

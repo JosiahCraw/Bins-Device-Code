@@ -1,0 +1,39 @@
+#!/bin/bash
+
+echo -e "Bin ID (Leave blank for random):"
+read id
+
+echo -e "Checking for firebase-admin python3 package"
+
+sudo apt install -y python3-dev
+sudo apt install -y python-imaging python-smbus
+sudo apt install -y python3-pil
+sudo apt install -y python3-pip
+sudo apt install -y python3-setuptools
+sudo apt install -y python3-rpi.gpio
+
+python3 setup.py
+
+if [ -z "$id"]
+then
+    if [[ $(dpkg -s pwgen | sed -n '2 p') == "Status: install ok installed" ]]; then
+        id=`pwgen 13 1`
+    else
+        echo "package pwgen not installed installing"
+	sudo apt install pwgen
+    fi
+fi
+
+echo -e "Bin name?"
+read name
+
+echo -e "Location?"
+read location
+
+if test -f "settings.conf"; then
+    rm settings.conf
+fi
+
+touch settings.conf
+printf "id:$id\nname:$name\nlocation:$location" >> settings.conf 
+
