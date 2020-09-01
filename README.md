@@ -2,7 +2,7 @@
 This is the code running on the Bin device.
 
 ## Images
-![Main Image](wiki/main.jpg =250x)
+<img src="wiki/main.jpg" alt="Main" width="200"/>
 
 ## Video
 A quick demonstration of the system.
